@@ -1,16 +1,18 @@
 <script setup>
-defineProps(["min", "max"]);
+import { computed } from '@vue/reactivity';
 
-const randomNumber = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
+const props = defineProps(["min", "max"]);
+
+const randomNumber = computed(() => {
+  return Math.floor(Math.random() * (props.max - props.min + 1) + props.min);
+});
 </script>
 
 <template>
   <div class="rounded-xl p-5 shadow-xl bg-white">
     <p>
       Random value between {{ min }} and {{ max }} =>
-      {{ randomNumber(min, max) }}
+      {{ randomNumber }}
     </p>
   </div>
 </template>

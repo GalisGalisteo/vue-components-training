@@ -1,8 +1,10 @@
 <script setup>
 import BoxColor from "./components/BoxColor.vue";
 import CreditCard from "./components/CreditCard.vue";
+import Greetings from "./components/Greetings.vue";
 import IdCard from "./components/IdCard.vue";
 import Random from "./components/Random.vue";
+import Rating from "./components/Rating.vue";
 </script>
 
 <template>
@@ -69,6 +71,19 @@ import Random from "./components/Random.vue";
         bg-color="#ddbb55"
         color="white"
       />
+    </section>
+    <section class="flex flex-col gap-4">
+      <h2 class="text-xl font-bold text-blue-700">Greetings</h2>
+      <Greetings lang="de"><span style="color: yellow">Ludwig</span></Greetings>
+      <Greetings lang="fr"><strong>François</strong></Greetings>
+    </section>
+    <section class="flex flex-col gap-4">
+      <Rating :rate="0" />
+      <Rating :rate="1.49" />
+      <Rating :rate="1.5" />
+      <Rating :rate="3" />
+      <Rating :rate="4" />
+      <Rating :rate="5" />
     </section>
   </div>
 </template>
