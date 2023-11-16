@@ -1,6 +1,7 @@
 <script setup>
 import BoxColor from "./components/BoxColor.vue";
 import CreditCard from "./components/CreditCard.vue";
+import DriverCard from "./components/DriverCard.vue";
 import Greetings from "./components/Greetings.vue";
 import IdCard from "./components/IdCard.vue";
 import Random from "./components/Random.vue";
@@ -38,6 +39,7 @@ import Rating from "./components/Rating.vue";
       <h2 class="text-xl font-bold text-blue-700">BoxColor</h2>
       <BoxColor :r="255" :g="0" :b="0" />
       <BoxColor :r="128" :g="255" :b="0" />
+      <BoxColor :r="128" :g="255" :b="200" />
     </section>
     <section class="flex flex-col gap-4">
       <h2 class="text-xl font-bold text-blue-700">CreditCard</h2>
@@ -72,18 +74,40 @@ import Rating from "./components/Rating.vue";
         color="white"
       />
     </section>
-    <section class="flex flex-col gap-4">
+    <section class="flex flex-col flex-wrap gap-4">
       <h2 class="text-xl font-bold text-blue-700">Greetings</h2>
-      <Greetings lang="de"><span style="color: yellow">Ludwig</span></Greetings>
-      <Greetings lang="fr"><strong>François</strong></Greetings>
+      <div class="flex flex-wrap gap-4">
+        <Greetings lang="de"
+          ><span style="color: yellow">Ludwig</span></Greetings
+        >
+        <Greetings lang="fr"><strong>François</strong></Greetings>
+      </div>
     </section>
     <section class="flex flex-col gap-4">
-      <Rating :rate="0" />
-      <Rating :rate="1.49" />
-      <Rating :rate="1.5" />
-      <Rating :rate="3" />
-      <Rating :rate="4" />
-      <Rating :rate="5" />
+      <h2 class="text-xl font-bold text-blue-700">Rating</h2>
+      <div class="grid grid-cols-3 justify-center gap-4">
+        <Rating class="rounded-xl p-5 shadow-xl bg-white" :rate="0" />
+        <Rating class="rounded-xl p-5 shadow-xl bg-white" :rate="1.49" />
+        <Rating class="rounded-xl p-5 shadow-xl bg-white" :rate="1.5" />
+        <Rating class="rounded-xl p-5 shadow-xl bg-white" :rate="3" />
+        <Rating class="rounded-xl p-5 shadow-xl bg-white" :rate="4" />
+        <Rating class="rounded-xl p-5 shadow-xl bg-white" :rate="5" />
+      </div>
+    </section>
+    <section class="flex flex-col justify-center gap-4">
+      <h2 class="text-xl font-bold text-blue-700">DriverCard</h2>
+      <DriverCard
+        name="Travis Kalanick"
+        :rating="4.2"
+        img="https://si.wsj.net/public/resources/images/BN-TY647_37gql_OR_20170621052140.jpg?width=620&height=428"
+        :car="{ model: 'Toyota Corolla Altis', licensePlate: 'CO42DE' }"
+      />
+      <DriverCard
+        name="Dara Khosrowshahi"
+        :rating="4.9"
+        img="https://ubernewsroomapi.10upcdn.com/wp-content/uploads/2017/09/Dara_ELT_Newsroom_1000px.jpg"
+        :car="{ model: 'Audi A3', licensePlate: 'BE33ER' }"
+      />
     </section>
   </div>
 </template>
