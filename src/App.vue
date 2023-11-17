@@ -1,9 +1,13 @@
 <script setup>
 import BoxColor from "./components/BoxColor.vue";
+import Carousel from "./components/Carousel.vue";
+import ClickablePicture from "./components/ClickablePicture.vue";
 import CreditCard from "./components/CreditCard.vue";
+import Dice from "./components/Dice.vue";
 import DriverCard from "./components/DriverCard.vue";
 import Greetings from "./components/Greetings.vue";
 import IdCard from "./components/IdCard.vue";
+import LikeButton from "./components/LikeButton.vue";
 import Random from "./components/Random.vue";
 import Rating from "./components/Rating.vue";
 </script>
@@ -94,7 +98,7 @@ import Rating from "./components/Rating.vue";
         <Rating class="rounded-xl p-5 shadow-xl bg-white" :rate="5" />
       </div>
     </section>
-    <section class="flex flex-col justify-center gap-4">
+    <section class="flex flex-col gap-4">
       <h2 class="text-xl font-bold text-blue-700">DriverCard</h2>
       <DriverCard
         name="Travis Kalanick"
@@ -108,6 +112,40 @@ import Rating from "./components/Rating.vue";
         img="https://ubernewsroomapi.10upcdn.com/wp-content/uploads/2017/09/Dara_ELT_Newsroom_1000px.jpg"
         :car="{ model: 'Audi A3', licensePlate: 'BE33ER' }"
       />
+    </section>
+    <section class="flex flex-col gap-4">
+      <h2 class="text-xl font-bold text-blue-700">LikeButton</h2>
+      <div class="flex flex-wrap gap-4">
+        <LikeButton />
+        <LikeButton />
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h2 class="text-xl font-bold text-blue-700">ClickablePicture</h2>
+      <div class="flex flex-wrap gap-4">
+        <ClickablePicture img="maxence.png" img-clicked="maxence-glasses.png" />
+        <ClickablePicture img="maxence.png" img-clicked="maxence-glasses.png" />
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h2 class="text-xl font-bold text-blue-700">Dice</h2>
+      <div class="flex gap-4">
+        <Dice />
+        <Dice />
+      </div>
+    </section>
+    <section class="flex flex-col gap-4">
+      <h2 class="text-xl font-bold text-blue-700">Carousel</h2>
+      <div class="flex flex-wrap gap-4">
+        <Carousel
+          :images="[
+            'https://randomuser.me/api/portraits/women/1.jpg',
+            'https://randomuser.me/api/portraits/men/1.jpg',
+            'https://randomuser.me/api/portraits/women/2.jpg',
+            'https://randomuser.me/api/portraits/men/2.jpg',
+          ]"
+        />
+      </div>
     </section>
   </div>
 </template>
