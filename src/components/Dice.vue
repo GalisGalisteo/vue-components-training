@@ -8,9 +8,15 @@ const randomDice = () => {
 
 const dice = ref(randomDice());
 
-const handleClick = () => {
-  dice.value = "src/assets/images/dice-empty.png";
-  setTimeout(() => (dice.value = randomDice()), 1000);
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+const handleClick = async () => {
+  for (let i = 0; i < 10; i++) {
+    dice.value = "src/assets/images/dice-empty.png";
+    await delay(100);
+    dice.value = randomDice();
+    await delay(100);
+  }
 };
 </script>
 
