@@ -8,6 +8,7 @@ import DriverCard from "./components/DriverCard.vue";
 import Greetings from "./components/Greetings.vue";
 import IdCard from "./components/IdCard.vue";
 import LikeButton from "./components/LikeButton.vue";
+import NumbersTable from "./components/NumbersTable.vue";
 import Random from "./components/Random.vue";
 import Rating from "./components/Rating.vue";
 </script>
@@ -145,6 +146,13 @@ import Rating from "./components/Rating.vue";
             'https://randomuser.me/api/portraits/men/2.jpg',
           ]"
         />
+      </div>
+    </section>
+    <section class="flex flex-col gap-4 max-w-md ml-4" >
+      <h2 class="text-xl font-bold text-blue-700">NumbersTable</h2>
+      <div class="flex flex-col gap-4">
+        <NumbersTable :limit="12" />
+        <NumbersTable :limit="20" />
       </div>
     </section>
   </div>
