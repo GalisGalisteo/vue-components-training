@@ -148,7 +148,7 @@ import Rating from "./components/Rating.vue";
         />
       </div>
     </section>
-    <section class="flex flex-col gap-4 max-w-md ml-4" >
+    <section class="flex flex-col gap-4 max-w-xs ml-4" >
       <h2 class="text-xl font-bold text-blue-700">NumbersTable</h2>
       <div class="flex flex-col gap-4">
         <NumbersTable :limit="12" />
